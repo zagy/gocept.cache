@@ -44,3 +44,44 @@ distance is computed again:
 >>> point.distance(2, 2)
 computing distance
 1.0
+
+
+Cached Properties
+=================
+
+Transaction Bound Cache
+-----------------------
+
+The transaction bound cache is invalidated on transaction boundaries.
+
+Create a class and set some data:
+
+>>> import gocept.cache.property
+>>> class Foo(object):
+... 
+...     cache = gocept.cache.property.TransactionBoundCache('_cache', dict)
+...
+>>> foo = Foo()
+>>> foo.cache
+{}
+>>> foo.cache['A'] = 1
+>>> foo.cache
+{'A': 1}
+
+If we commit the transaction the cache is empty again:
+
+>>> import transaction
+>>> transaction.commit()
+>>> foo.cache
+{}
+
+
+The same happens on abort -- once we get a ZODB supporting it:
+
+#>>> foo.cache['A'] = 1
+#>>> foo.cache
+#{'A': 1}
+#>>> transaction.abort()
+#>>> foo.cache
+#{}
+
