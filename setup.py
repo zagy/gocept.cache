@@ -27,7 +27,6 @@ setup(
 
     namespace_packages = ['gocept'],
     install_requires = [
-        'decorator',
         'setuptools',
         'ZODB3',
     ],
