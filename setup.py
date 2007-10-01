@@ -29,6 +29,7 @@ setup(
     install_requires = [
         'setuptools',
         'ZODB3',
+        'decorator',
     ],
     extras_require = dict(
         test=['zope.testing'])

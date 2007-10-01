@@ -23,6 +23,14 @@ Memoize with timeout caches methods with a certain timeout:
 ...         print 'computing distance'
 ...         return math.sqrt((self.x - x)**2 + (self.y - y)**2)
 ...
+...     @gocept.cache.method.Memoize(0.1, ignore_self=True)
+...     def add_one(self, i):
+...         if not isinstance(i, int):
+...             print "I want an int"
+...         else:
+...             print 'adding one'
+...             return i + 1
+...
 >>> point = Point(1.0, 2.0)   
 
 When we first ask for the distance it is computed:
@@ -44,6 +52,49 @@ distance is computed again:
 >>> point.distance(2, 2)
 computing distance
 1.0
+
+
+When we create a new instance, the new instance gets its own cache:
+
+>>> p2 = Point(1.0, 2.0)
+>>> p2.distance(2, 2)
+computing distance
+1.0
+
+It's also possible to explicitly ignore self. We did this for the `add_one`
+method:
+
+>>> point.add_one(3)
+adding one
+4
+
+The second time it's not computed as you would expect:
+>>> point.add_one(3)
+4
+
+If we ask `p2` now the result is not computed as well:
+
+>>> p2.add_one(3)
+4
+
+If we put a non hashable argument into a memoized function it will not be
+cached:
+
+>>> point.add_one({'a': 1})
+I want an int
+>>> point.add_one({'a': 1})
+I want an int
+
+
+The decorated method can be introspected and yields the same results ad the
+original:
+
+>>> import inspect
+>>> Point.distance.func_name
+'distance'
+>>> inspect.getargspec(Point.distance)
+(['self', 'x', 'y'], None, None, None)
+
 
 
 Cached Properties
