@@ -2,48 +2,70 @@
 # See also LICENSE.txt
 # $Id$
 
+import inspect
 import time
 
+import decorator
 
-class Memoize(object):
+
+_caches = {}
+_timeouts = {}
+
+
+def collect():
+    """Clear cache of results which have timed out"""
+    for func in _caches:
+        cache = {}
+        for key in _caches[func]:
+            if (time.time() - _caches[func][key][1] <
+                _timeouts[func]):
+                cache[key] = _caches[func][key]
+        _caches[func] = cache
+
+
+def clear():
+    _caches.clear()
+    _timeouts.clear()
+
+
+def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
     """Memoize With Timeout
 
     Based on http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/325905
 
     """
 
-    _caches = {}
-    _timeouts = {}
+    @decorator.decorator
+    def func(f, *args, **kwargs):
+        cache = _caches.setdefault(f, {})
+        _timeouts.setdefault(f, timeout)
 
-    def __init__(self,timeout=2):
-        self.timeout = timeout
+        cache_args = args
+        if ignore_self:
+            arguments = inspect.getargspec(f)[0]
+            if arguments and arguments[0] == 'self':
+                cache_args = args[1:]
 
-    def collect(self):
-        """Clear cache of results which have timed out"""
-        for func in self._caches:
-            cache = {}
-            for key in self._caches[func]:
-                if (time.time() - self._caches[func][key][1] <
-                    self._timeouts[func]):
-                    cache[key] = self._caches[func][key]
-            self._caches[func] = cache
+        kw = kwargs.items()
+        kw.sort()
+        key = (cache_args, tuple(kw))
 
-    def __call__(self, f):
-        self.cache = self._caches[f] = {}
-        self._timeouts[f] = self.timeout
+        try:
+            hash(key)
+        except TypeError:
+            # Not hashable.
+            key = None
 
-        def func(*args, **kwargs):
-            kw = kwargs.items()
-            kw.sort()
-            key = (args, tuple(kw))
-            try:
-                v = self.cache[key]
-                #print "cache"
-                if (time.time() - v[1]) > self.timeout:
-                    raise KeyError
-            except KeyError:
-                #print "new"
-                v = self.cache[key] = f(*args,**kwargs),time.time()
-            return v[0]
+        try:
+            value, cached_time = cache[key]
+            #print "cache"
+            if (time.time() - cached_time) > timeout:
+                raise KeyError
+        except KeyError:
+            #print "new"
+            value = f(*args,**kwargs)
+            if key is not None:
+                cache[key] = (value, time.time())
+        return value
 
-        return func
+    return func
