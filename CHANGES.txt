@@ -1,0 +1,10 @@
+=======
+Changes
+=======
+
+
+0.2.1 (unreleased)
+==================
+
+- Fixed a bug in `TransactionBoundCache` which yielded an error in the log:
+  `TypeError: <lambda>() takes exactly 1 argument (2 given)`

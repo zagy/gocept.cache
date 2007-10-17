@@ -20,7 +20,7 @@ class TransactionBoundCache(object):
             transaction.get().addBeforeCommitHook(
                 self.invalidate, (instance, ))
             transaction.get().addAfterCommitHook(
-                lambda commit_or_abort: self.invalidate, (instance, ))
+                lambda commit_or_abort: self.invalidate(instance))
         return cache
 
     def invalidate(self, instance):
