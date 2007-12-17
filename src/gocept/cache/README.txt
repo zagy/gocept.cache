@@ -127,12 +127,12 @@ If we commit the transaction the cache is empty again:
 {}
 
 
-The same happens on abort -- once we get a ZODB supporting it::
+The same happens on abort:
 
-#>>> foo.cache['A'] = 1
-#>>> foo.cache
-#{'A': 1}
-#>>> transaction.abort()
-#>>> foo.cache
-#{}
+>>> foo.cache['A'] = 1
+>>> foo.cache
+{'A': 1}
+>>> transaction.abort()
+>>> foo.cache
+{}
 
