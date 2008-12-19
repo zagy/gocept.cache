@@ -2,8 +2,8 @@
 Changes
 =======
 
-0.3 (unreleased)
-===============
+0.3 (2008-12-19)
+================
 
 - Added @memoize_on_attribute to retrieve the memoization cache from the
   instance instead of using gocept.cache.method's built-in cache.
