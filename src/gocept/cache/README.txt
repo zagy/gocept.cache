@@ -95,6 +95,50 @@ original:
 >>> inspect.getargspec(Point.distance)
 (['self', 'x', 'y'], None, None, None)
 
+Store memoizations on an attribute
+----------------------------------
+
+If you want more control over the cache used by gocept.cache.method.Memoize
+(e. g. you want to associate it with a gocept.cache.property.CacheDataManager
+to invalidate it on transaction boundaries), you can use the @memoize_on_attribute
+decorator to retrieve the cache-dictionary from the instance:
+
+>>> class Bar(object):
+...     cache = {}
+...
+...     @gocept.cache.method.memoize_on_attribute('cache', 10)
+...     def echo(self, x):
+...         print 'miss'
+...         return x
+
+>>> bar = Bar()
+>>> bar.echo(5)
+miss
+5
+>>> bar.echo(5)
+5
+>>> bar.cache.clear()
+>>> bar.echo(5)
+miss
+5
+
+This decorator should be used on methods, not on plain functions, since it must
+be able to retrieve the cache-dictionary from the first argument of the function
+(which is 'self' for methods):
+
+>>> @gocept.cache.method.memoize_on_attribute('cache', 10)
+... def bar():
+...     print 'foo'
+>>> bar()
+Traceback (most recent call last):
+TypeError: gocept.cache.method.memoize_on_attribute could not retrieve cache attribute 'cache' for function <function bar at 0x...>
+
+>>> @gocept.cache.method.memoize_on_attribute('cache', 10)
+... def baz(x):
+...     print 'foo'
+>>> baz(5)
+Traceback (most recent call last):
+TypeError: gocept.cache.method.memoize_on_attribute could not retrieve cache attribute 'cache' for function <function baz at 0x...>
 
 
 Cached Properties
@@ -135,4 +179,3 @@ The same happens on abort:
 >>> transaction.abort()
 >>> foo.cache
 {}
-

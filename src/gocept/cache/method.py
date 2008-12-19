@@ -69,3 +69,19 @@ def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
         return value
 
     return func
+
+
+def memoize_on_attribute(attribute_name, timeout, ignore_self=False):
+    @decorator.decorator
+    def func(function, *args, **kw):
+        try:
+            self = args[0]
+            cache = getattr(self, attribute_name)
+        except (IndexError, AttributeError):
+            raise TypeError(
+                "gocept.cache.method.memoize_on_attribute could"
+                + " not retrieve cache attribute '%s' for function %r"
+                % (attribute_name, function))
+        return Memoize(timeout, _caches=cache,
+                       ignore_self=ignore_self)(function)(*args, **kw)
+    return func
