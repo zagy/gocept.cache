@@ -1,11 +1,10 @@
 # Copyright (c) 2007 gocept gmbh & co. kg
 # See also LICENSE.txt
-# $Id$
-
-import inspect
-import time
 
 import decorator
+import inspect
+import time
+import zope.testing.cleanup
 
 
 _caches = {}
@@ -26,6 +25,9 @@ def collect():
 def clear():
     _caches.clear()
     _timeouts.clear()
+
+
+zope.testing.cleanup.addCleanUp(clear)
 
 
 def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
