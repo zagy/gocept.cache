@@ -14,7 +14,7 @@ Memoize with timeout caches methods with a certain timeout:
 >>> import gocept.cache.method
 >>>
 >>> class Point(object):
-... 
+...
 ...     def __init__(self, x, y):
 ...         self.x, self.y = x, y
 ...
@@ -31,7 +31,7 @@ Memoize with timeout caches methods with a certain timeout:
 ...             print 'adding one'
 ...             return i + 1
 ...
->>> point = Point(1.0, 2.0)   
+>>> point = Point(1.0, 2.0)
 
 When we first ask for the distance it is computed:
 
@@ -153,7 +153,7 @@ Create a class and set some data:
 
 >>> import gocept.cache.property
 >>> class Foo(object):
-... 
+...
 ...     cache = gocept.cache.property.TransactionBoundCache('_cache', dict)
 ...
 >>> foo = Foo()
