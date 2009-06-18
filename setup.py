@@ -29,10 +29,9 @@ setup(
 
     namespace_packages = ['gocept'],
     install_requires = [
-        'setuptools',
         'ZODB3',
         'decorator',
+        'setuptools',
+        'zope.testing',
     ],
-    extras_require = dict(
-        test=['zope.testing'])
-    )
+)
