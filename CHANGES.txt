@@ -2,7 +2,7 @@
 Changes
 =======
 
-0.4 (unreleased)
+0.4 (2009-06-18)
 ================
 
 - Registered clearing the cache with zope.testing.cleanup.
