@@ -8,8 +8,6 @@ import zope.testing.cleanup
 
 
 class CleanupTest(zope.testing.cleanup.CleanUp, unittest.TestCase):
-    # usually, zope.app.testing.functional.FunctionalTestCase
-    # will be used, which inherits CleanUp
 
     def test_aaa_pollute_cache(self):
         gocept.cache.method._caches['foo'] = 'bar'
