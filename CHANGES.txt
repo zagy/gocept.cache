@@ -5,8 +5,7 @@ Changes
 0.5 (unreleased)
 ================
 
-- Nothing changed yet.
-
+- Replace dependency on ZODB with a dependency on transaction.
 
 0.4 (2009-06-18)
 ================
