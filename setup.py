@@ -1,6 +1,5 @@
 # Copyright (c) 2007 gocept gmbh & co. kg
 # See also LICENSE.txt
-# $Id$
 
 import os.path
 
@@ -29,9 +28,9 @@ setup(
 
     namespace_packages = ['gocept'],
     install_requires = [
-        'ZODB3',
         'decorator',
         'setuptools',
+        'transaction',
         'zope.testing',
     ],
 )
