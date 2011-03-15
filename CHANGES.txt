@@ -2,7 +2,7 @@
 Changes
 =======
 
-0.5 (unreleased)
+0.5 (2011-03-15)
 ================
 
 - Replace dependency on ZODB with a dependency on transaction.
