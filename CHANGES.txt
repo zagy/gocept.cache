@@ -9,6 +9,8 @@ Changes
   not to be stored when collect was called during the Memoize call
   (in multi threaded environments).
 
+- Pin test versions to ZTK 1.1
+
 0.5 (2011-03-15)
 ================
 
