@@ -2,6 +2,13 @@
 Changes
 =======
 
+0.6 (unreleased)
+================
+
+- Prevent race condition which caused values of ``gocept.cache.method.Memoize``
+  not to be stored when collect was called during the Memoize call
+  (in multi threaded environments).
+
 0.5 (2011-03-15)
 ================
 
