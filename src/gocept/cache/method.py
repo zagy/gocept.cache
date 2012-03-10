@@ -14,12 +14,10 @@ _timeouts = {}
 def collect():
     """Clear cache of results which have timed out"""
     for func in _caches:
-        cache = {}
         for key in _caches[func]:
-            if (time.time() - _caches[func][key][1] <
+            if (time.time() - _caches[func][key][1] >=
                 _timeouts[func]):
-                cache[key] = _caches[func][key]
-        _caches[func] = cache
+                _caches[func].pop(key, None)
 
 
 def clear():
