@@ -2,8 +2,8 @@
 Changes
 =======
 
-0.6 (unreleased)
-================
+0.5.1 (2012-03-10)
+==================
 
 - Prevent race condition which caused values of ``gocept.cache.method.Memoize``
   not to be stored when collect was called during the Memoize call
