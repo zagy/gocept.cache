@@ -13,10 +13,10 @@ setup(
     author_email = "cz@gocept.com",
     description = "Cache descriptors for Python and Zope",
     long_description = (
-        file(os.path.join(os.path.dirname(__file__),
+        open(os.path.join(os.path.dirname(__file__),
                           'src', 'gocept', 'cache', 'README.txt')).read() +
         '\n\n' +
-        file(os.path.join(os.path.dirname(__file__), 'CHANGES.txt')).read()),
+        open(os.path.join(os.path.dirname(__file__), 'CHANGES.txt')).read()),
     license = "ZPL 2.1",
     url='http://pypi.python.org/pypi/gocept.cache',
 
