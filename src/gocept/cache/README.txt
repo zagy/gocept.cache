@@ -92,7 +92,7 @@ original:
 >>> import inspect
 >>> Point.distance.func_name
 'distance'
->>> inspect.getargspec(Point.distance)
+>>> tuple(inspect.getargspec(Point.distance))
 (['self', 'x', 'y'], None, None, None)
 
 Store memoizations on an attribute
