@@ -2,7 +2,7 @@
 Changes
 =======
 
-0.5.2 (unreleased)
+0.5.2 (2012-06-22)
 ==================
 
 - Added ``gocept.cache.method.do_not_cache_and_return(value)`` in memoized
