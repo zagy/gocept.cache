@@ -28,6 +28,15 @@ def clear():
 zope.testing.cleanup.addCleanUp(clear)
 
 
+class do_not_cache_and_return(object):
+    """Class which may be returned by a memoized method"""
+    def __init__(self, value):
+        self.value = value
+
+    def __call__(self):
+        return self.value
+
+
 def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
     """Memoize With Timeout
 
@@ -64,6 +73,8 @@ def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
         except KeyError:
             #print "new"
             value = f(*args,**kwargs)
+            if isinstance(value, do_not_cache_and_return):
+                return value()
             if key is not None:
                 cache[key] = (value, time.time())
         return value

@@ -95,6 +95,96 @@ original:
 >>> tuple(inspect.getargspec(Point.distance))
 (['self', 'x', 'y'], None, None, None)
 
+
+Explicitly exclude caching of a certain value
+---------------------------------------------
+
+Especially when talking to external systems, you want to handle
+errors (i.e. by returning an emtpy result). But normally you
+do not want to cache this special return value.
+
+This is our database.
+
+>>> class DB(object):
+...
+...     call_count = 0
+...
+...     def get_country(self, zip):
+...         self.call_count += 1
+...         if self.call_count % 2 == 0:
+...             raise ValueError('Some strange response')
+...         return 'Somecountry'
+...
+
+It will throw an exception with every 2nd call:
+
+>>> db = DB()
+>>> db.get_country(12345)
+'Somecountry'
+
+>>> db.get_country(12345)
+Traceback (most recent call last):
+...
+ValueError: Some strange response
+
+>>> db.get_country(12345)
+'Somecountry'
+
+>>> db.get_country(12345)
+Traceback (most recent call last):
+...
+ValueError: Some strange response
+
+
+Now we use do_not_cache_and_return to specify that we do
+not want to cache if there was en error.
+
+>>> import gocept.cache.method
+>>>
+>>> class Country(object):
+...
+...     db = DB()
+...
+...     @gocept.cache.method.Memoize(1000)
+...     def by_zip(self, zip):
+...         try:
+...             return self.db.get_country(zip)
+...         except ValueError:
+...             return gocept.cache.method.do_not_cache_and_return(
+...                     'DB is down.')
+...
+
+>>> country = Country()
+
+First call will get cached, so we get the correct country with every call:
+
+>>> country.by_zip(12345)
+'Somecountry'
+
+>>> country.by_zip(12345)
+'Somecountry'
+
+>>> country.by_zip(12345)
+'Somecountry'
+
+By using a new zip, the get_country method is called the second time, and
+there will be an exception, which is not cached:
+
+>>> country.by_zip(54321)
+'DB is down.'
+
+Calling it again will call get_country, because special return value is not
+cached:
+
+>>> country.by_zip(54321)
+'Somecountry'
+
+Now we always get the cached value:
+
+>>> country.by_zip(54321)
+'Somecountry'
+
+
 Store memoizations on an attribute
 ----------------------------------
 
