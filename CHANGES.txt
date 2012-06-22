@@ -5,8 +5,8 @@ Changes
 0.5.2 (unreleased)
 ==================
 
-- Nothing changed yet.
-
+- Added ``gocept.cache.method.do_not_cache_and_return(value)`` in memoized
+  methods/functions which will return the given value, without caching it.
 
 0.5.1 (2012-03-10)
 ==================
