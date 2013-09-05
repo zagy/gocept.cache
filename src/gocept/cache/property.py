@@ -4,7 +4,7 @@
 import transaction
 import transaction.interfaces
 
-import zope.interface
+from zope.interface import implementer
 
 
 class TransactionBoundCache(object):
@@ -31,9 +31,8 @@ class TransactionBoundCache(object):
             pass
 
 
+@implementer(transaction.interfaces.IDataManager)
 class CacheDataManager(object):
-
-    zope.interface.implements(transaction.interfaces.IDataManager)
 
     def __init__(self, cache, instance, tm):
         self.cache = cache
