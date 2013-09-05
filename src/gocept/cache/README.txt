@@ -20,15 +20,15 @@ Memoize with timeout caches methods with a certain timeout:
 ...
 ...     @gocept.cache.method.Memoize(0.1)
 ...     def distance(self, x, y):
-...         print 'computing distance'
+...         print('computing distance')
 ...         return math.sqrt((self.x - x)**2 + (self.y - y)**2)
 ...
 ...     @gocept.cache.method.Memoize(0.1, ignore_self=True)
 ...     def add_one(self, i):
 ...         if not isinstance(i, int):
-...             print "I want an int"
+...             print("I want an int")
 ...         else:
-...             print 'adding one'
+...             print('adding one')
 ...             return i + 1
 ...
 >>> point = Point(1.0, 2.0)
@@ -90,7 +90,7 @@ The decorated method can be introspected and yields the same results ad the
 original:
 
 >>> import inspect
->>> Point.distance.func_name
+>>> Point.distance.__name__
 'distance'
 >>> tuple(inspect.getargspec(Point.distance))
 (['self', 'x', 'y'], None, None, None)
@@ -198,7 +198,7 @@ decorator to retrieve the cache-dictionary from the instance:
 ...
 ...     @gocept.cache.method.memoize_on_attribute('cache', 10)
 ...     def echo(self, x):
-...         print 'miss'
+...         print('miss')
 ...         return x
 
 >>> bar = Bar()
@@ -218,14 +218,14 @@ be able to retrieve the cache-dictionary from the first argument of the function
 
 >>> @gocept.cache.method.memoize_on_attribute('cache', 10)
 ... def bar():
-...     print 'foo'
+...     print('foo')
 >>> bar()
 Traceback (most recent call last):
 TypeError: gocept.cache.method.memoize_on_attribute could not retrieve cache attribute 'cache' for function <function bar at 0x...>
 
 >>> @gocept.cache.method.memoize_on_attribute('cache', 10)
 ... def baz(x):
-...     print 'foo'
+...     print('foo')
 >>> baz(5)
 Traceback (most recent call last):
 TypeError: gocept.cache.method.memoize_on_attribute could not retrieve cache attribute 'cache' for function <function baz at 0x...>

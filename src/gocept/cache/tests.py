@@ -39,11 +39,11 @@ class TestCollect(zope.testing.cleanup.CleanUp, unittest.TestCase):
         _running = False
         t.join()
         # caches looks like this:
-        # {<function takes_a_while at 0x1013e98c0>: 
+        # {<function takes_a_while at 0x1013e98c0>:
         #    {((), ()): ('value', 1331375622.015022)}}
         # Assert only that 'value' is there.
         self.assertEqual('value',
-             gocept.cache.method._caches.values()[0].values()[0][0])
+             list(list(gocept.cache.method._caches.values())[0].values())[0][0])
 
 
 def test_suite():

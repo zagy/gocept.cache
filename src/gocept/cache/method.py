@@ -55,7 +55,7 @@ def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
             if arguments and arguments[0] == 'self':
                 cache_args = args[1:]
 
-        kw = kwargs.items()
+        kw = list(kwargs.items())
         kw.sort()
         key = (cache_args, tuple(kw))
 
