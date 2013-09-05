@@ -2,7 +2,7 @@
 Changes
 =======
 
-0.5.3 (unreleased)
+0.6b1 (2013-09-05)
 ==================
 
 - Python3 compatibility
