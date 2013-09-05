@@ -2,7 +2,7 @@
 Changes
 =======
 
-0.6b2 (unreleased)
+0.6b2 (2013-09-05)
 ==================
 
 - Nothing changed yet.
