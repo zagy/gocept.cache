@@ -1,14 +1,18 @@
 syntax: glob
 
+.coverage
 .installed.cfg
 bin
 build
+coverage-report
 develop-eggs
 dist
 doc/_api
 eggs
+local
 local.cfg
 parts
+report.xml
 lib/
 include/
 .Python

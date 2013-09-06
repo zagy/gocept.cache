@@ -44,13 +44,3 @@ class TestCollect(zope.testing.cleanup.CleanUp, unittest.TestCase):
         # Assert only that 'value' is there.
         self.assertEqual('value',
              list(list(gocept.cache.method._caches.values())[0].values())[0][0])
-
-
-def test_suite():
-    suite = unittest.TestSuite()
-    suite.addTest(unittest.makeSuite(CleanupTest))
-    suite.addTest(unittest.makeSuite(TestCollect))
-    suite.addTest(doctest.DocFileSuite(
-        'README.txt',
-        optionflags=doctest.ELLIPSIS))
-    return suite
