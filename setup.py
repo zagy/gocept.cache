@@ -12,6 +12,13 @@ setup(
     author = "Christian Zagrodnick",
     author_email = "cz@gocept.com",
     description = "Cache descriptors for Python and Zope",
+    classifiers=[
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.3",
+    ]
     long_description = (
         open(os.path.join(os.path.dirname(__file__),
                           'src', 'gocept', 'cache', 'README.txt')).read() +
