@@ -5,7 +5,7 @@ Changes
 0.7 (unreleased)
 ================
 
-- Nothing changed yet.
+- Finish Python 3 compatibility
 
 
 0.6 (2013-09-13)
