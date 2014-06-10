@@ -244,8 +244,12 @@ Create a class and set some data:
 >>> import gocept.cache.property
 >>> class Foo(object):
 ...
-...     cache = gocept.cache.property.TransactionBoundCache('_cache', dict)
+...     cache = gocept.cache.property.TransactionBoundCache('_v_cache', dict)
 ...
+
+(NOTE: You probably want to use a "volatile" attribute name for the cache
+storage, otherwise a read-only access of the cache triggers a write.)
+
 >>> foo = Foo()
 >>> foo.cache
 {}
