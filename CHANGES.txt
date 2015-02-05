@@ -17,13 +17,13 @@ Changes
 0.6 (2013-09-13)
 ================
 
-- Nothing changed yet.
+- Changes not recored, sorry.
 
 
 0.6b2 (2013-09-05)
 ==================
 
-- Nothing changed yet.
+- Changes not recored, sorry.
 
 
 0.6b1 (2013-09-05)
