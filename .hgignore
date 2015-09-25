@@ -1,5 +1,9 @@
 syntax: glob
 
+*.cache
+*.egg-info
+*.pyc
+.Python
 .coverage
 .installed.cfg
 bin
@@ -9,10 +13,9 @@ develop-eggs
 dist
 doc/_api
 eggs
+include/
+lib/
 local
 local.cfg
 parts
 report.xml
-lib/
-include/
-.Python
