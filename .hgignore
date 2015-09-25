@@ -6,6 +6,7 @@ syntax: glob
 .Python
 .coverage
 .installed.cfg
+.tox
 bin
 build
 coverage-report
@@ -19,3 +20,4 @@ local
 local.cfg
 parts
 report.xml
+testreport.xml
