@@ -2,8 +2,8 @@
 Changes
 =======
 
-0.6.2 (unreleased)
-==================
+1.0 (2015-09-25)
+================
 
 - Now testing against currently newest versions of dependencies.
 
