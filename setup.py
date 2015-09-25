@@ -28,6 +28,7 @@ setup(
         "Programming Language :: Python :: 3.5",
     ],
     long_description=(
+        ".. contents::\n\n" +
         open(os.path.join(os.path.dirname(__file__),
                           'src', 'gocept', 'cache', 'README.txt')).read() +
         '\n\n' +
