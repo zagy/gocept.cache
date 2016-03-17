@@ -16,7 +16,7 @@ def collect():
     for func in _caches:
         for key in list(_caches[func]):
             if (time.time() - _caches[func][key][1] >=
-                _timeouts[func]):
+                    _timeouts[func]):
                 _caches[func].pop(key, None)
 
 
@@ -30,6 +30,7 @@ zope.testing.cleanup.addCleanUp(clear)
 
 class do_not_cache_and_return(object):
     """Class which may be returned by a memoized method"""
+
     def __init__(self, value):
         self.value = value
 
@@ -67,12 +68,10 @@ def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
 
         try:
             value, cached_time = cache[key]
-            #print "cache"
             if (time.time() - cached_time) > timeout:
                 raise KeyError
         except KeyError:
-            #print "new"
-            value = f(*args,**kwargs)
+            value = f(*args, **kwargs)
             if isinstance(value, do_not_cache_and_return):
                 return value()
             if key is not None:
@@ -90,8 +89,8 @@ def memoize_on_attribute(attribute_name, timeout, ignore_self=False):
             cache = getattr(self, attribute_name)
         except (IndexError, AttributeError):
             raise TypeError(
-                "gocept.cache.method.memoize_on_attribute could"
-                + " not retrieve cache attribute '%s' for function %r"
+                "gocept.cache.method.memoize_on_attribute could" +
+                " not retrieve cache attribute '%s' for function %r"
                 % (attribute_name, function))
         return Memoize(timeout, _caches=cache,
                        ignore_self=ignore_self)(function)(*args, **kw)
