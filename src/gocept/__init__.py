@@ -2,5 +2,5 @@
 # See also LICENSE.txt
 # $Id$
 
-#namespace package boilerplate
+# namespace package boilerplate
 __import__('pkg_resources').declare_namespace(__name__)
