@@ -2,7 +2,7 @@
 Changes
 =======
 
-1.1 (unreleased)
+2.0 (2016-03-18)
 ================
 
 - Drop support of Python 2.6.
