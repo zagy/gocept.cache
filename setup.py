@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='gocept.cache',
-    version='1.1.dev0',
+    version='2.0',
     author="gocept",
     author_email="mail@gocept.com",
     description="Cache descriptors for Python and Zope",
