@@ -33,7 +33,7 @@ setup(
         open(os.path.join(os.path.dirname(__file__),
                           'src', 'gocept', 'cache', 'README.txt')).read() +
         '\n\n' +
-        open(os.path.join(os.path.dirname(__file__), 'CHANGES.txt')).read()),
+        open(os.path.join(os.path.dirname(__file__), 'CHANGES.rst')).read()),
     license="ZPL 2.1",
     url='https://bitbucket.org/gocept/gocept.cache',
     packages=find_packages('src'),
