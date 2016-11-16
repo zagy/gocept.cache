@@ -5,7 +5,8 @@ Changes
 2.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Bugfix: ``.property.CacheDataManager`` no longer invalidates the cache in
+  ``tpc_vote()`` and ``commit()`` but in ``tpc_finish()``.
 
 
 2.0 (2016-03-18)
