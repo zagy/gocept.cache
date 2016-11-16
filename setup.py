@@ -1,5 +1,11 @@
 import os.path
 from setuptools import setup, find_packages
+import sys
+
+
+tests_require = []
+if sys.version_info < (3, 3):
+    tests_require.append('mock')
 
 
 setup(
@@ -49,4 +55,6 @@ setup(
         'transaction',
         'zope.testing',
     ],
+    extras_require=dict(
+        test=tests_require),
 )
