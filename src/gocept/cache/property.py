@@ -43,13 +43,13 @@ class CacheDataManager(object):
         pass
 
     def commit(self, trans):
-        self._invalidate()
+        pass
 
     def tpc_vote(self, trans):
-        self._invalidate()
+        pass
 
     def tpc_finish(self, trans):
-        pass
+        self._invalidate()
 
     def tpc_abort(self, trans):
         self._invalidate()
