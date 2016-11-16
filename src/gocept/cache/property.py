@@ -14,10 +14,10 @@ class TransactionBoundCache(object):
         try:
             cache = getattr(instance, self.attribute)
         except AttributeError:
-            cache = self.factory()
-            setattr(instance, self.attribute, cache)
             dm = CacheDataManager(self, instance, transaction.get())
             transaction.get().join(dm)
+            cache = self.factory()
+            setattr(instance, self.attribute, cache)
 
         return cache
 
