@@ -10,7 +10,7 @@ if sys.version_info < (3, 3):
 
 setup(
     name='gocept.cache',
-    version='2.1.dev0',
+    version='2.1',
     author="gocept",
     author_email="mail@gocept.com",
     description="Cache descriptors for Python and Zope",

@@ -2,7 +2,7 @@
 Changes
 =======
 
-2.1 (unreleased)
+2.1 (2016-11-17)
 ================
 
 - Bugfix: ``.property.CacheDataManager`` no longer invalidates the cache in
