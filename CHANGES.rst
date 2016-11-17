@@ -8,6 +8,9 @@ Changes
 - Bugfix: ``.property.CacheDataManager`` no longer invalidates the cache in
   ``tpc_vote()`` and ``commit()`` but in ``tpc_finish()``.
 
+- Raise `TransactionJoinError` if joining the transaction failed in
+  ``.property.TransactionBoundCache``.
+
 
 2.0 (2016-03-18)
 ================

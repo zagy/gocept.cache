@@ -4,6 +4,10 @@ import transaction.interfaces
 from zope.interface import implementer
 
 
+class TransactionJoinError(ValueError):
+    """Joining a transaction has failed."""
+
+
 class TransactionBoundCache(object):
 
     def __init__(self, name, factory):
@@ -15,7 +19,11 @@ class TransactionBoundCache(object):
             cache = getattr(instance, self.attribute)
         except AttributeError:
             dm = CacheDataManager(self, instance, transaction.get())
-            transaction.get().join(dm)
+            txn = transaction.get()
+            try:
+                txn.join(dm)
+            except ValueError as e:
+                raise TransactionJoinError(str(e))
             cache = self.factory()
             setattr(instance, self.attribute, cache)
 
