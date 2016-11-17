@@ -9,6 +9,8 @@ except ImportError:
 
 
 class Foo(object):
+    """Example object having a TransactionBoundCache."""
+
     cache = TransactionBoundCache('_v_cache', dict)
 
 
