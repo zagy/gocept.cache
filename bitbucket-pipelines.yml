@@ -1,0 +1,9 @@
+image: themattrix/tox
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - pip
+        script:
+          - tox
