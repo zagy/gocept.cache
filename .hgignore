@@ -5,6 +5,7 @@ syntax: glob
 *.pyc
 .Python
 .coverage
+.coverage.py*
 .installed.cfg
 .tox
 bin
