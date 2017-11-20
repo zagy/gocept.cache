@@ -2,10 +2,12 @@
 Changes
 =======
 
-2.2 (unreleased)
+3.0 (unreleased)
 ================
 
 - Remove use of ``__file__`` in setup.py, to accommodate recent setuptools.
+
+- Drop support for Python 3.3.
 
 
 2.1 (2016-11-17)
