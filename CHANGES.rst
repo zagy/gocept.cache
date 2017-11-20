@@ -7,6 +7,8 @@ Changes
 
 - Remove use of ``__file__`` in setup.py, to accommodate recent setuptools.
 
+- Add support for Python 3.6.
+
 - Drop support for Python 3.3.
 
 
