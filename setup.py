@@ -23,7 +23,6 @@ setup(
         "Topic :: Software Development",
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules",
-
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
@@ -33,6 +32,7 @@ setup(
         "Programming Language :: Python :: Implementation :: PyPy",
         "Programming Language :: Python :: Implementation :: CPython",
     ],
+    keywords='cache transaction bound zope',
     long_description=(
         ".. contents::\n\n" +
         open(os.path.join('src', 'gocept', 'cache', 'README.txt')).read() +
