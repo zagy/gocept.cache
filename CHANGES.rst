@@ -2,7 +2,7 @@
 Changes
 =======
 
-3.0 (unreleased)
+3.0 (2017-11-20)
 ================
 
 - Remove use of ``__file__`` in setup.py, to accommodate recent setuptools.
