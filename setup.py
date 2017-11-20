@@ -4,9 +4,8 @@ import sys
 
 
 tests_require = []
-if sys.version_info < (3, 3):
+if sys.version_info[0] == 2:
     tests_require.append('mock')
-
 
 setup(
     name='gocept.cache',
@@ -28,7 +27,6 @@ setup(
         "Programming Language :: Python :: 2",
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.3",
         "Programming Language :: Python :: 3.4",
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: Implementation :: PyPy",

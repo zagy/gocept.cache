@@ -1,6 +1,6 @@
+from gocept.cache.property import TransactionBoundCache, TransactionJoinError
 import pytest
 import transaction
-from gocept.cache.property import TransactionBoundCache, TransactionJoinError
 
 try:
     import unittest.mock as mock
