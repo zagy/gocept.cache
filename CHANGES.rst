@@ -5,7 +5,7 @@ Changes
 2.2 (unreleased)
 ================
 
-- Nothing changed yet.
+- Remove use of ``__file__`` in setup.py, to accommodate recent setuptools.
 
 
 2.1 (2016-11-17)
