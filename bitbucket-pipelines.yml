@@ -1,4 +1,4 @@
-image: themattrix/tox
+image: saaj/snake-tank
 
 pipelines:
   default:
