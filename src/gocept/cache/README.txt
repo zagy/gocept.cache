@@ -89,10 +89,13 @@ I want an int
 The decorated method can be introspected and yields the same results ad the
 original:
 
->>> import inspect
+>>> try:
+...     from inspect import getfullargspec
+... except ImportError:
+...     from inspect import getargspec as getfullargspec
 >>> Point.distance.__name__
 'distance'
->>> tuple(inspect.getargspec(Point.distance))
+>>> tuple(getfullargspec(Point.distance))[:4]
 (['self', 'x', 'y'], None, None, None)
 
 
