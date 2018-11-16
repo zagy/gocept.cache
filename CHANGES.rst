@@ -7,6 +7,8 @@ Changes
 
 - Add support for Python 3.7.
 
+- Remove DeprecationWarnings concerning inspect.
+
 
 3.0 (2017-11-20)
 ================

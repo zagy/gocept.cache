@@ -1,8 +1,12 @@
 import decorator
-import inspect
 import time
 import zope.testing.cleanup
 
+try:
+    from inspect import getfullargspec
+except ImportError:
+    # Python 2, use inspect.signature if Python 3 only.
+    from inspect import getargspec as getfullargspec
 
 _caches = {}
 _timeouts = {}
@@ -49,7 +53,7 @@ def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
 
         cache_args = args
         if ignore_self:
-            arguments = inspect.getargspec(f)[0]
+            arguments = getfullargspec(f)[0]
             if arguments and arguments[0] == 'self':
                 cache_args = args[1:]
 
