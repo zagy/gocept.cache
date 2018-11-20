@@ -89,10 +89,7 @@ I want an int
 The decorated method can be introspected and yields the same results ad the
 original:
 
->>> try:
-...     from inspect import getfullargspec
-... except ImportError:
-...     from inspect import getargspec as getfullargspec
+>>> from gocept.cache.method import getfullargspec
 >>> Point.distance.__name__
 'distance'
 >>> tuple(getfullargspec(Point.distance))[:4]
