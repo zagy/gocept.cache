@@ -1,0 +1,12 @@
+language: python
+image: saaj/snake-tank
+python:
+- 2.7
+install: 
+script: tox
+after_success: 
+cache:
+  pip: true
+notifications:
+  webhooks:
+    secure: IdxK6XeCuk+TB5qiNsg47VT+G9j9ol14y8E+jiG6uO+gQP4gDYdzZ/8adUH89sdUex+h8cbAYW7UnOPRS775cFaShF9IXQakQA7moTPOdim025hM0AFglIDMOItemXPGlY3SWANV1xD3cikXQNwj5wdyfMccF8SMJ2lNX56l0v5JiEuejfQneTH76PLwe03xhqrjeUhaUsxQID6Kz8Z/4iATQDRjnqm/3RydqHE7lINtBDExEN4TPIMvU2t0j/oiTABQ1XZt9DJLDic/iNwf3lQZmpA4wX+qmF00g56TNIerjrHvTuauxmxGEbIxUzApx2OJLFxW5/5Egoj6MNowcEI3jAX/IQrr6UvGC+rGPFEmvLzWy4hl6MCHnpxXOO92tsA9qR78edyt/L9pCTfuZhaRp08gSpkKUPsdDEkSrY3Hu3OQ65o8oNQXr/8vSdy5ZUqUOttBLIALNVToTZP0Qux2q1eWI4DRlU8RrZUByPSYkD3ohoXnghgehNA5CqdNOgiciVP2YMZQWQI5f3bdB13T9XykzTfHE/WHeeuzQnv2QXfKm4nYGW2sy9Ld6a6M0uobTOhvjZCU6KJ1IM4XMKekXLbkks/lsM+gidMRkwV0zjE6GsXD3XSp/UA+4hcB4BAXbtDuYde7qGRFzNuDWZ7rJHxwI+YlOBKnYKtk/qk=

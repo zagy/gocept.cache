@@ -40,7 +40,7 @@ setup(
         '\n\n' +
         open('CHANGES.rst').read()),
     license="ZPL 2.1",
-    url='https://bitbucket.org/gocept/gocept.cache',
+    url='https://github.com/gocept/gocept.cache',
     packages=find_packages('src'),
     package_dir={'': 'src'},
 

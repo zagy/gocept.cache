@@ -7,6 +7,8 @@ Changes
 
 - Nothing changed yet.
 
+- Migrate to github.
+
 
 3.1 (2018-11-20)
 ================
