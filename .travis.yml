@@ -5,11 +5,14 @@ python:
   - 3.5
   - 3.6
   - 3.7
+  - 3.8-dev
   - pypy
   - pypy3
-install: pip install tox-travis
+install: pip install tox-travis coverage coveralls
 script: tox
-after_success: 
+after_success:
+  - coverage combine
+  - coveralls
 cache:
   pip: true
 notifications:

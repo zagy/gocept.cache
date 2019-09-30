@@ -5,7 +5,9 @@ Changes
 3.2 (unreleased)
 ================
 
-- Nothing changed yet.
+- Add support for Python 3.7.
+
+- Drop support for Python 3.4.
 
 - Migrate to github.
 
