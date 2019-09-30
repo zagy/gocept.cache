@@ -36,7 +36,7 @@ setup(
     keywords='cache transaction bound zope',
     long_description=(
         ".. contents::\n\n" +
-        open(os.path.join('src', 'gocept', 'cache', 'README.txt')).read() +
+        open(os.path.join('src', 'gocept', 'cache', 'README.rst')).read() +
         '\n\n' +
         open('CHANGES.rst').read()),
     license="ZPL 2.1",
