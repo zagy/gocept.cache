@@ -2,6 +2,12 @@
 gocept.cache
 ============
 
+.. image:: https://coveralls.io/repos/github/gocept/gocept.cache/badge.svg
+    :target: https://coveralls.io/github/gocept/gocept.cache
+
+.. image:: https://travis-ci.com/gocept/gocept.cache.svg?branch=master
+    :target: https://travis-ci.com/gocept/gocept.cache
+
 RAM caching infrastructure.
 
 This package is compatible with Python version 2.7, 3.5, 3.6, 3.7, 3.8, PyPy
