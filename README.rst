@@ -10,10 +10,10 @@ gocept.cache
 
 RAM caching infrastructure.
 
-This package is compatible with Python version 2.7, 3.5, 3.6, 3.7, 3.8, PyPy
+This package is compatible with Python version 2.7, 3.6, 3.7, 3.8, 3.9, PyPy
 and PyPy 3.
 
-Copyright (c) 2007-2019 gocept gmbh & co. kg
+Copyright (c) 2007-2020 gocept gmbh & co. kg
 
 All Rights Reserved.
 
