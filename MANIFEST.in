@@ -11,4 +11,4 @@ exclude *.yml
 
 exclude MANIFEST.in
 
-recursive-include src *.txt
+recursive-include src *.rst
