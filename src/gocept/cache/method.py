@@ -41,6 +41,8 @@ class do_not_cache_and_return(object):
 
 def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
     """Memoize With Timeout
+    
+    timeout ... in seconds
 
     Based on http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/325905
 
