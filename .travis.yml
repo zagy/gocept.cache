@@ -1,12 +1,12 @@
 language: python
-dist: xenial
+dist: focal
 python:
   - 2.7
   - 3.6
   - 3.7
   - 3.8
   - 3.9-dev
-  - pypy
+  - pypy2
   - pypy3
 install: pip install tox-travis coverage coveralls
 script: tox
