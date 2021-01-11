@@ -5,7 +5,7 @@ Changes
 4.1 (unreleased)
 ================
 
-- Nothing changed yet.
+- Use Github actions as CI.
 
 
 4.0 (2020-02-17)
