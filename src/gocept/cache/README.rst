@@ -86,14 +86,14 @@ I want an int
 I want an int
 
 
-The decorated method can be introspected and yields the same results ad the
+The decorated method can be inspected and yields the same results as the
 original:
 
->>> from gocept.cache.method import getfullargspec
+>>> from inspect import signature
 >>> Point.distance.__name__
 'distance'
->>> tuple(getfullargspec(Point.distance))[:4]
-(['self', 'x', 'y'], None, None, None)
+>>> tuple(signature(Point.distance).parameters.keys())
+('self', 'x', 'y')
 
 
 Explicitly exclude caching of a certain value

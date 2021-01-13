@@ -8,7 +8,7 @@ class TransactionJoinError(ValueError):
     """Joining a transaction has failed."""
 
 
-class TransactionBoundCache(object):
+class TransactionBoundCache:
 
     def __init__(self, name, factory):
         self.attribute = name
@@ -37,7 +37,7 @@ class TransactionBoundCache(object):
 
 
 @implementer(transaction.interfaces.IDataManager)
-class CacheDataManager(object):
+class CacheDataManager:
 
     def __init__(self, cache, instance, tm):
         self.cache = cache

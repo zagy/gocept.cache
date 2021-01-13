@@ -1,14 +1,10 @@
 from gocept.cache.property import TransactionBoundCache, TransactionJoinError
+from unittest import mock
 import pytest
 import transaction
 
-try:
-    import unittest.mock as mock
-except ImportError:
-    import mock
 
-
-class Foo(object):
+class Foo:
     """Example object having a TransactionBoundCache."""
 
     cache = TransactionBoundCache('_v_cache', dict)
@@ -24,7 +20,7 @@ def test_property__TransactionBoundCache__invalidate__1():
     transaction.get()._resources[0].cache.invalidate(foo)
 
 
-class NoopDatamanager(object):
+class NoopDatamanager:
     """Datamanager which does nothing."""
 
     def abort(self, trans):

@@ -15,7 +15,6 @@ jobs:
         config:
         # [Python version, tox env]
         - ["3.8",   "flake8"]
-        - ["2.7",   "py27"]
         - ["3.6",   "py36"]
         - ["3.7",   "py37"]
         - ["3.8",   "py38"]

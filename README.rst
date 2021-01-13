@@ -5,15 +5,14 @@ gocept.cache
 .. image:: https://coveralls.io/repos/github/gocept/gocept.cache/badge.svg
     :target: https://coveralls.io/github/gocept/gocept.cache
 
-.. image:: https://travis-ci.com/gocept/gocept.cache.svg?branch=master
-    :target: https://travis-ci.com/gocept/gocept.cache
+.. image:: https://github.com/gocept/gocept.cache/workflows/tests/badge.svg
+    :target: https://github.com/gocept/gocept.cache/actions?query=workflow%3Atests
 
 RAM caching infrastructure.
 
-This package is compatible with Python version 2.7, 3.6, 3.7, 3.8, 3.9, PyPy
-and PyPy 3.
+This package is compatible with Python version 3.6, 3.7, 3.8, 3.9 and PyPy 3.
 
-Copyright (c) 2007-2020 gocept gmbh & co. kg
+Copyright (c) 2007-2021 gocept gmbh & co. kg
 
 All Rights Reserved.
 
