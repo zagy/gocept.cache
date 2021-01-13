@@ -1,12 +1,8 @@
 import decorator
+import inspect
 import time
 import zope.testing.cleanup
 
-try:
-    from inspect import getfullargspec
-except ImportError:
-    # Python 2, use inspect.signature if Python 3 only.
-    from inspect import getargspec as getfullargspec
 
 _caches = {}
 _timeouts = {}
@@ -29,7 +25,7 @@ def clear():
 zope.testing.cleanup.addCleanUp(clear)
 
 
-class do_not_cache_and_return(object):
+class do_not_cache_and_return:
     """Class which may be returned by a memoized method"""
 
     def __init__(self, value):
@@ -54,8 +50,8 @@ def Memoize(timeout, ignore_self=False, _caches=_caches, _timeouts=_timeouts):
 
         cache_args = args
         if ignore_self:
-            arguments = getfullargspec(f)[0]
-            if arguments and arguments[0] == 'self':
+            parameters = inspect.signature(f).parameters
+            if parameters and next(iter(parameters)) == 'self':
                 cache_args = args[1:]
 
         kw = list(kwargs.items())

@@ -1,11 +1,9 @@
 import os.path
 from setuptools import setup, find_packages
-import sys
 
 
 tests_require = []
-if sys.version_info[0] == 2:
-    tests_require.append('mock')
+
 
 setup(
     name='gocept.cache',
@@ -23,10 +21,8 @@ setup(
         "Topic :: Software Development",
         "Topic :: Software Development :: Libraries",
         "Topic :: Software Development :: Libraries :: Python Modules",
-        "Programming Language :: Python :: 2",
-        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3 :: Only",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
@@ -49,6 +45,7 @@ setup(
     zip_safe=False,
 
     namespace_packages=['gocept'],
+    python_requires='>=3.6, <4',
     install_requires=[
         'decorator',
         'setuptools',
