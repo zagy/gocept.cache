@@ -17,8 +17,8 @@ class TestCollect(zope.testing.cleanup.CleanUp, unittest.TestCase):
 
     def test_collect_during_memoize_should_not_prevent_cache(self):
         import gocept.cache.method
-        import time
         import threading
+        import time
 
         _running = True
 
