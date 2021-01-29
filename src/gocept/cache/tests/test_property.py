@@ -1,4 +1,5 @@
-from gocept.cache.property import TransactionBoundCache, TransactionJoinError
+from gocept.cache.property import TransactionBoundCache
+from gocept.cache.property import TransactionJoinError
 from unittest import mock
 import pytest
 import transaction

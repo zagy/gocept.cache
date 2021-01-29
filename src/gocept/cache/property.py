@@ -1,7 +1,6 @@
+from zope.interface import implementer
 import transaction
 import transaction.interfaces
-
-from zope.interface import implementer
 
 
 class TransactionJoinError(ValueError):
