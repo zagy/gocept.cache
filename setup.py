@@ -24,10 +24,10 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3 :: Only",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Programming Language :: Python :: Implementation :: CPython",
     ],
@@ -46,7 +46,7 @@ setup(
     zip_safe=False,
 
     namespace_packages=['gocept'],
-    python_requires='>=3.6, <4',
+    python_requires='>=3.7, <4',
     install_requires=[
         'decorator',
         'setuptools',
