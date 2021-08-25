@@ -6,6 +6,8 @@ Changes
 ================
 
 - Drop support for Python 2.7.
+- Change license from ZPL to MIT.
+
 
 - Use Github actions as CI.
 
