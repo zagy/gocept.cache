@@ -16,7 +16,7 @@ setup(
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
         "License :: OSI Approved",
-        "License :: OSI Approved :: Zope Public License",
+        "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Operating System :: OS Independent",
         "Topic :: Software Development",
@@ -37,7 +37,7 @@ setup(
         open(os.path.join('src', 'gocept', 'cache', 'README.rst')).read() +
         '\n\n' +
         open('CHANGES.rst').read()),
-    license="ZPL 2.1",
+    license="MIT",
     url='https://github.com/gocept/gocept.cache',
     packages=find_packages('src'),
     package_dir={'': 'src'},
