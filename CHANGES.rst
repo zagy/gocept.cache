@@ -5,9 +5,20 @@ Changes
 5.0 (unreleased)
 ================
 
-- Drop support for Python 2.7.
+Backwards incompatible changes
+++++++++++++++++++++++++++++++
+
 - Change license from ZPL to MIT.
 
+- Drop support for Python 2.7 and 3.6.
+
+Features
+++++++++
+
+- Add support for Python 3.10.
+
+Other changes
++++++++++++++
 
 - Use Github actions as CI.
 
