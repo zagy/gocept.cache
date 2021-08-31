@@ -8,7 +8,7 @@ tests_require = []
 
 setup(
     name='gocept.cache',
-    version='5.0',
+    version='5.1.dev0',
     author="gocept",
     author_email="mail@gocept.com",
     description="Cache descriptors for Python and Zope",
