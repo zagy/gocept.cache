@@ -8,7 +8,7 @@ tests_require = []
 
 setup(
     name='gocept.cache',
-    version='5.1.dev0',
+    version='6.0.dev0',
     author="gocept",
     author_email="mail@gocept.com",
     description="Cache descriptors for Python and Zope",
@@ -45,7 +45,7 @@ setup(
     zip_safe=False,
 
     namespace_packages=['gocept'],
-    python_requires='>=3.7, <4',
+    python_requires='>=3.8',
     install_requires=[
         'decorator',
         'setuptools',

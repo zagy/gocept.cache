@@ -2,12 +2,12 @@
 Changes
 =======
 
-5.1 (unreleased)
+6.0 (unreleased)
 ================
 
 - Add support for Python 3.11.
 
-- Drop support for PyPy and Python 3.7.
+- Drop support for Python 3.7.
 
 
 5.0 (2021-08-31)
