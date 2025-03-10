@@ -5,7 +5,7 @@ Changes
 6.0 (unreleased)
 ================
 
-- Add support for Python 3.11.
+- Add support for Python 3.11 and 3.12.
 
 - Drop support for Python 3.7.
 
